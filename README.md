@@ -1,7 +1,8 @@
 MEAN Typescript Angular2 Skeleton
 =================
 
-A simple MEAN stack skeleton written in Typescript.
+A simple MEAN stack skeleton written in Typescript copied from
+https://github.com/TeamTobb/MEAN-Typescript-Angular2-Skeleton.
 
 ### Features
 * MongoDB
