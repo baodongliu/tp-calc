@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "system",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true
+    },
+    "filesGlob": [
+        "controllers/*.ts"
+    ],
+    "compileOnSave": true,
+    "atom": {
+        "rewriteTsconfig": true
+    },
+    "files": [
+        "controllers/app.component.ts",
+        "controllers/tp-calc.component.ts",
+        "controllers/tp.component.ts",
+        "controllers/main.ts"
+    ]
+}

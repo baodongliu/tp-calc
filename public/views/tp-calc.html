@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <title>Thinkpad 代购价格计算</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--<link rel="stylesheet" href="styles.css"> -->
+    <!-- IE required polyfills, in this exact order -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.33.3/es6-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.20/system-polyfills.js"></script>
+
+    <script src="https://code.angularjs.org/2.0.0-beta.3/angular2-polyfills.js"></script>
+    <script src="https://code.angularjs.org/tools/system.js"></script>
+    <script src="https://code.angularjs.org/tools/typescript.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.3/Rx.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.3/angular2.dev.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.3/router.dev.js"></script>
+    <script>
+      System.config({
+        transpiler: 'typescript', 
+        typescriptOptions: { emitDecoratorMetadata: true }, 
+        packages: {'../controllers': {defaultExtension: 'ts'}} 
+      });
+      System.import('../controllers/main')
+            .then(null, console.error.bind(console));
+    </script>
+  </head>
+
+  <body>
+    <my-tpcalc>Loading...</my-tpcalc>
+  </body>
+</html>
+
+

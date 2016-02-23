@@ -1,0 +1,198 @@
+<h3>Thinkpad 代购费用计算器</h3>
+
+<div>
+  <label>折扣后的价格(Price after savings) US$: </label>
+  <input [(ngModel)]="price" placeholder="price in US$" />
+  <button (click)="calcTpPrice()">计算费用</button>
+  <label *ngIf="finalFee">代购的总费用: ￥{{finalFee}}</label>
+</div>
+
+<div *ngIf="finalFee">
+  <!--> Title row <-->
+  <table border="1" style="width:100%">
+    <tr>
+      <td>
+        各项详细费用列表
+      </td>
+
+      <td>
+        免税州中转的计算方式
+      </td>
+
+      <td>
+        直接寄加州有消费税的计算方式
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        电脑价格：
+      </td>
+
+      <td>
+        ${{fee1.price.toFixed(2)}}
+      </td>
+
+      <td>
+        ${{fee2.price.toFixed(2)}}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        电脑美国国内转运费(我所在的州有消费税，为了免消费税，与联想无关）：
+      </td>
+
+      <td>
+        ${{fee1.shipFee1}}
+      </td>
+
+      <td>
+        ${{fee2.shipFee1}}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        电脑的消费税率：
+      </td>
+
+      <td>
+        {{fee1.salesTaxRateStr}}
+      </td>
+
+      <td>
+        {{fee2.salesTaxRateStr}}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        电脑的消费税：
+      </td>
+
+      <td>
+        ${{fee1.salesTax.toFixed(2)}}
+      </td>
+
+      <td>
+        ${{fee2.salesTax.toFixed(2)}}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        美国到中国的邮费：
+      </td>
+
+      <td>
+        ${{fee1.shipFee2}}
+      </td>
+
+      <td>
+        ${{fee2.shipFee2}}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        电脑代购的总价：
+      </td>
+
+      <td>
+        ${{fee1.totalCost.toFixed(2)}}
+      </td>
+
+      <td>
+        ${{fee2.totalCost.toFixed(2)}}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        代购费率：
+      </td>
+
+      <td>
+        {{fee1.serviceFeeRateStr}}
+      </td>
+
+      <td>
+        {{fee2.serviceFeeRateStr}}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        代购费用：
+      </td>
+
+      <td>
+        ${{fee1.serviceFee.toFixed(2)}}
+      </td>
+
+      <td>
+        ${{fee2.serviceFee.toFixed(2)}}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        美元总价：
+      </td>
+
+      <td>
+        ${{fee1.totalUSD.toFixed(2)}}
+      </td>
+
+      <td>
+        ${{fee2.totalUSD.toFixed(2)}}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        汇率：（中国外汇管制，拿不到实时汇率，只能从其他渠道买汇）
+      </td>
+
+      <td>
+        {{fee1.exchangeRate}}
+      </td>
+
+      <td>
+        {{fee2.exchangeRate}}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        RMB总价：￥
+      </td>
+
+      <td>
+        ￥{{fee1.totalRMB.toFixed(0)}}
+      </td>
+
+      <td>
+        ￥{{fee2.totalRMB.toFixed(0)}}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        RMB总价（信用卡或者花呗支付，多收1%）：￥
+      </td>
+
+      <td>
+        ￥{{fee1.totalRMBCredit.toFixed(0)}}
+      </td>
+
+      <td>
+        ￥{{fee2.totalRMBCredit.toFixed(0)}}
+      </td>
+    </tr>
+
+
+  </table>
+
+</div>
